@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modal</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+    /*navi menu S*/
+    #navi{}
+    .quick-menu{width: 60px;height: 325px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        position: fixed; right: 10px;bottom: 120px;
+        
+        background-color: #fff;
+        box-shadow: rgba(0,0,0,0.1) 0 10px 20px;
+        border-top-left-radius: 8px;
+        border-bottom-right-radius: 10px;
+        transition: all 0.8s;
+    }
+    .quick-menu li{width: 100%;height: 60px; 
+        position: relative;
+    }
+     
+    .quick-menu span{display: block; width: 80px; padding: 8px 5px; opacity: 0;
+        position: absolute; right: 130px;top: 50%; transform: translateY(-50%);
+        background-color: rgba(0,0,0,0.7);
+        color: #fff; font-size: 11px; text-align: center;
+        border-radius: 30px;
+        transition: all 0.5s ease
+    }
+    .quick-menu a{display: block; width: 40px;height: 40px;
+        margin: 10px 0 0 10px;
+        padding: 12px 0;
+        box-sizing: border-box;
+        font-size: 12px; color: #a27b73; text-align: center;
+        transition: all 0.5s
+    }
+
+    .quick-menu li:nth-child(1) a{color: #461b0e;
+        background-color: #fdcd21;
+        margin: 0;
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        border-top-left-radius: 8px;
+    }
+        
+    .quick-top{display: block; width: 36px;height: 36px; opacity: 0.7;
+        position: fixed; right: 10px;bottom: 10px;
+        font-size: 10px; text-align: center; font-weight: bold;
+        padding-top: 12px;
+        box-sizing: border-box;
+        background-size: cover;
+        border-radius: 4px;
+        border: 1px solid #ccc
+    }
+        
+        
+    .quick-menu li a:hover{
+        border-radius: 100%;
+        background-color: #c9ab81;
+        box-shadow: rgba(0,0,0,0.2) 0 5px 6px;
+        color: #fff   
+    }
+    .quick-menu li:nth-child(1) a:hover{
+        border-radius: 0;
+        background-color: #fdcd21;
+        color: #333;
+        box-shadow: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="navi">
+            <ul class="quick-menu">
+               <li><a href="#">관리자 메뉴</a></li>
+               <li><span>상품 등록</span><a href="#">등록</a></li>
+               <li><span>상품 관리</span><a href="#">관리</a></li>
+               <li><span>관리자메뉴</span><a href="#">메뉴</a></li>
+               <li><span>기타 메뉴</span><a href="#">기타</a></li>
+            </ul>
+            <a href="#" class="quick-top">TOP</a>
+        </div>
+    </div>
+</body>
+    <script>
+            $(".quick-menu li a").hover(function(){
+                $(this).siblings().css({
+                    "opacity": "1",
+                    "right": "50px"
+                });
+            },function(){
+                $(this).siblings().css({
+                    "opacity": "0",
+                    "right": "100px"
+                });
+            })
+        //오른쪽 퀵메뉴 버튼 기능
+//        var num;
+//        var scrollNum;
+//
+//        function gnbClick(e) {
+//            e.preventDefault();
+//            num = $(this).index()
+//            scrollNum = $('.container_wrap section').eq(num).offset().top
+//            $('html,body').stop().animate({
+//                scrollTop: scrollNum
+//            }, 1000)
+//        }
+    </script>
+</html>
