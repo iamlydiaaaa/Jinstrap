@@ -5,6 +5,6 @@ Personal bootstrap
 
 <ol>
 <li>[2022-11-02] 모달 팝업 창</li>
-<li></li>
+<li>[2022-11-17] 퀵메뉴 팝업</li>
 <li></li>
 </ol>
